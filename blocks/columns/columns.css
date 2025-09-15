@@ -832,7 +832,6 @@
   padding: 0;
 }
 
-/* Two-column Flexbox layout */
 .columns.columns22 > div {
   display: flex;
   flex-direction: row;
@@ -842,7 +841,6 @@
   padding: 0 2vw;
 }
 
-/* Responsive stacking for mobile */
 @media (width <= 800px) {
   .columns.columns22 > div {
     flex-direction: column;
@@ -850,7 +848,6 @@
   }
 }
 
-/* Left column - headline, description, button */
 .columns.columns22 > div > div:first-child {
   flex: 0 0 40%;
   max-width: 40%;
@@ -862,7 +859,6 @@
   align-items: flex-start;
 }
 
-/* Headline styling */
 .columns.columns22 h1 {
   color: #3c3c3b;
   font-weight: 400;
@@ -873,7 +869,6 @@
   letter-spacing: 0;
 }
 
-/* Description paragraph */
 .columns.columns22 > div > div:first-child > p {
   color: #5c5c5c;
   font-size: 1rem;
@@ -882,7 +877,6 @@
   width: 100%;
 }
 
-/* "See more" button override for outline look */
 .columns.columns22 > div > div:first-child .button-container .button {
   border: 1px solid #3c3c3b;
   color: #3c3c3b;
@@ -897,7 +891,6 @@
   max-width: 100%;
 }
 
-/* Button hover/focus */
 .columns.columns22 > div > div:first-child .button-container .button:hover,
 .columns.columns22 > div > div:first-child .button-container .button:focus {
   background: #3c3c3b;
@@ -905,7 +898,6 @@
   border-color: #3c3c3b;
 }
 
-/* Right column - only show divider, hide everything else */
 .columns.columns22 > div > div:last-child {
   flex: 0 0 60%;
   max-width: 60%;
@@ -919,7 +911,6 @@
   justify-content: flex-start;
 }
 
-/* Hide job listing content in right column but allow divider line */
 .columns.columns22 > div > div:last-child > ul,
 .columns.columns22 > div > div:last-child > h3,
 .columns.columns22 > div > div:last-child > p,
@@ -927,10 +918,90 @@
   display: none;
 }
 
-/* Prevent inherited flex/grid on any nested stats/facts blocks */
 .columns.columns22 > div > div > div {
   display: initial;
   flex-direction: initial;
   padding: initial;
   max-width: initial;
+}
+
+
+.columns.columns23 {
+  background: #f5f5f4;
+  padding: 32px 0;
+}
+
+.columns.columns23 > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+  gap: 0;
+}
+
+/* Keep columns compact and evenly distributed */
+.columns.columns23 > div > div {
+  flex: 0 1 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 2px;
+  min-width: 0;
+  position: relative;
+}
+
+/* Visual vertical divider between columns */
+.columns.columns23 > div > div:not(:first-child)::before {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 38px;
+  width: 1px;
+  background: #d2d2ce;
+}
+
+/* Typography remains tightly grouped */
+.columns.columns23 h3 {
+  font-size: 15px;
+  font-weight: 400;
+  color: #595959;
+  margin: 0 0 4px;
+  line-height: 1.35;
+}
+
+.columns.columns23 p {
+  font-size: 20px;
+  font-weight: 400;
+  color: #595959;
+  margin: 0;
+  line-height: 1.35;
+}
+
+/* Responsive: stack columns, use a horizontal divider */
+@media (width <= 700px) {
+  .columns.columns23 > div {
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 100%;
+  }
+
+  .columns.columns23 > div > div {
+    padding: 20px 0;
+    flex-basis: auto;
+  }
+
+  .columns.columns23 > div > div:not(:first-child)::before {
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 38px;
+    height: 1px;
+  }
 }
