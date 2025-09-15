@@ -239,7 +239,7 @@
   padding: 0;
   text-decoration: none;
   white-space: pre-line;
-  word-break: break-word;
+  overflow-wrap: break-word; /* Replaced deprecated "word-break: break-word" */
   font-weight: 500;
   max-width: 80%;
   overflow: visible;
@@ -255,4 +255,132 @@
 .cards.cards4 .cards-card-image:empty {
   min-height: 0;
   margin-bottom: 0;
+}
+
+
+.cards.cards7 {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding-top: 40px;
+  padding-left: 32px;
+
+  /* Improve left/top inset to better match the original image */
+}
+
+.cards.cards7 > ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  /* 3 columns, fixed for desktop "L" layout */
+  grid-template-rows: 1fr 1fr;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 380px;
+
+  /* Helps reveal the block structure if empty for dev; remove for prod */
+  place-items: stretch stretch;
+}
+
+.cards.cards7 > ul > li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 9;
+  background: #e5e5e5;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgb(0 0 0 / 12%);
+  border: none;
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  transition: box-shadow 0.2s;
+}
+
+/* "L" layout: place the 4th card below the first */
+.cards.cards7 > ul > li:nth-child(4) {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+/* Image fills card */
+.cards.cards7 > ul > li img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Overlayed card content */
+.cards.cards7 > ul > li > *:not(img) {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+  padding: 0 16px;
+  width: 100%;
+  text-shadow: 0 2px 8px rgb(0 0 0 / 47%);
+  font-size: clamp(1.2rem, 2.2vw, 2.6rem);
+  line-height: 1.15;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  height: 100%;
+}
+
+/* Responsive: 2 columns on tablets */
+@media (width <= 900px) {
+  .cards.cards7 {
+    padding-left: 12px;
+    padding-top: 24px;
+  }
+
+  .cards.cards7 > ul {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 16px;
+    min-height: 250px;
+  }
+
+  .cards.cards7 > ul > li {
+    aspect-ratio: 4 / 3;
+  }
+
+  .cards.cards7 > ul > li:nth-child(4) {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+  }
+}
+
+/* Responsive: 1 column on mobile */
+@media (width <= 600px) {
+  .cards.cards7 {
+    padding-left: 0;
+    padding-top: 10px;
+  }
+
+  .cards.cards7 > ul {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    min-height: 0;
+  }
+
+  .cards.cards7 > ul > li {
+    aspect-ratio: 4 / 3;
+  }
+
+  .cards.cards7 > ul > li:nth-child(4) {
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+  }
 }
