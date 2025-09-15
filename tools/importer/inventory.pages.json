@@ -1,0 +1,72 @@
+{
+  "templates": [
+    {
+      "name": "'Portfolio Grid'",
+      "cluster": 1,
+      "pages": [
+        {
+          "url": "https://www.richemont.com/talent/",
+          "uuid": "dd531e25fa43c82784d78b61c4bdfbcf9c15fe53"
+        },
+        {
+          "url": "https://www.richemont.com/our-maisons/",
+          "uuid": "57185fa3f1b5ee9559f479718bde62073ec85b25"
+        },
+        {
+          "url": "https://www.richemont.com/about-us/",
+          "uuid": "e7f95c8319befe6b435db6c296990a9f7e1fec3a"
+        }
+      ]
+    },
+    {
+      "name": "'Portfolio Gallery'",
+      "cluster": 2,
+      "pages": [
+        {
+          "url": "https://www.richemont.com/sustainability/",
+          "uuid": "a93c09f07574cb7b34b390333c5e0b6f8042cb2b"
+        }
+      ]
+    },
+    {
+      "name": "'Multi-section Content Page'",
+      "cluster": 3,
+      "pages": [
+        {
+          "url": "https://www.richemont.com/our-maisons/van-cleef-arpels/",
+          "uuid": "1c0e4436f85e0705dd90535e0d04f9cc9a4cbd55"
+        }
+      ]
+    },
+    {
+      "name": "'Dashboard Template'",
+      "cluster": 4,
+      "pages": [
+        {
+          "url": "https://www.richemont.com/",
+          "uuid": "57fbc00c934033ee7eaab2130a5d75698d046195"
+        }
+      ]
+    },
+    {
+      "name": "'Dashboard Overview'",
+      "cluster": 5,
+      "pages": [
+        {
+          "url": "https://www.richemont.com/investors/",
+          "uuid": "921776faaf9e5b26241d1f4ad54f23aedc27f57e"
+        }
+      ]
+    },
+    {
+      "name": "'Portfolio Showcase'",
+      "cluster": 6,
+      "pages": [
+        {
+          "url": "https://www.richemont.com/news-media/",
+          "uuid": "c0f29da7a35e3bf5bbb232dd42d4e51ebc9ecce5"
+        }
+      ]
+    }
+  ]
+}
