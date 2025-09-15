@@ -239,7 +239,7 @@
   padding: 0;
   text-decoration: none;
   white-space: pre-line;
-  overflow-wrap: break-word; /* Replaced deprecated "word-break: break-word" */
+  overflow-wrap: break-word;
   font-weight: 500;
   max-width: 80%;
   overflow: visible;
@@ -265,15 +265,11 @@
   box-sizing: border-box;
   padding-top: 40px;
   padding-left: 32px;
-
-  /* Improve left/top inset to better match the original image */
 }
 
 .cards.cards7 > ul {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-
-  /* 3 columns, fixed for desktop "L" layout */
   grid-template-rows: 1fr 1fr;
   gap: 32px;
   list-style: none;
@@ -282,8 +278,6 @@
   width: 100%;
   box-sizing: border-box;
   min-height: 380px;
-
-  /* Helps reveal the block structure if empty for dev; remove for prod */
   place-items: stretch stretch;
 }
 
@@ -303,13 +297,11 @@
   transition: box-shadow 0.2s;
 }
 
-/* "L" layout: place the 4th card below the first */
 .cards.cards7 > ul > li:nth-child(4) {
   grid-column: 1 / 2;
   grid-row: 2 / 3;
 }
 
-/* Image fills card */
 .cards.cards7 > ul > li img {
   position: absolute;
   inset: 0;
@@ -319,7 +311,6 @@
   z-index: 1;
 }
 
-/* Overlayed card content */
 .cards.cards7 > ul > li > *:not(img) {
   position: relative;
   z-index: 2;
@@ -338,7 +329,6 @@
   height: 100%;
 }
 
-/* Responsive: 2 columns on tablets */
 @media (width <= 900px) {
   .cards.cards7 {
     padding-left: 12px;
@@ -362,7 +352,6 @@
   }
 }
 
-/* Responsive: 1 column on mobile */
 @media (width <= 600px) {
   .cards.cards7 {
     padding-left: 0;
@@ -382,5 +371,94 @@
   .cards.cards7 > ul > li:nth-child(4) {
     grid-column: 1 / 2;
     grid-row: 4 / 5;
+  }
+}
+
+
+.cards.cards11 > ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.8rem;
+  align-items: stretch;
+  margin: 0;
+  padding: 0;
+}
+
+/* Card container: keep cards the same height and visually balanced */
+.cards.cards11 > ul > li {
+  background: #fff;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  min-height: 640px;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+/* Image styling: taller and visually balanced */
+.cards.cards11 .cards-card-image {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background: #fff;
+  margin-bottom: 1.6rem;
+  display: flex;
+  align-items: stretch;
+}
+
+/* Make sure image covers the full area */
+.cards.cards11 .cards-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Text area: more generous left/right and bottom padding, visually center content */
+.cards.cards11 .cards-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 2.4rem 3.2rem;
+  margin: 0;
+  color: #333;
+  font-size: 1em;
+  line-height: 1.7;
+}
+
+/* Remove extra paragraph margins */
+.cards.cards11 .cards-card-body p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Heading effect: larger, bold, with more separation */
+.cards.cards11 .cards-card-body p::first-line {
+  font-size: 1.6em;
+  font-weight: 700;
+  color: #222;
+  line-height: 1.15;
+  margin-bottom: 0.8em;
+}
+
+/* Ensure everything stretches vertically for even card heights */
+.cards.cards11 > ul > li,
+.cards.cards11 .cards-card-body {
+  height: 100%;
+}
+
+/* RESPONSIVE: 2 columns on medium, 1 column on small screens */
+@media (width <= 1200px) {
+  .cards.cards11 > ul {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.4rem;
+  }
+}
+
+@media (width <= 700px) {
+  .cards.cards11 > ul {
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 }
