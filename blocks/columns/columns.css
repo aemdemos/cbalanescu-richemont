@@ -1,3 +1,4 @@
+/* stylelint-disable no-descending-specificity */
 .columns > div {
   display: flex;
   flex-direction: column;
@@ -39,7 +40,6 @@
   margin: 0;
 }
 
-/* Side-by-side columns, centered more vertically in page */
 .columns.columns2 > div {
   display: flex;
   flex-direction: row;
@@ -53,7 +53,6 @@
   box-sizing: border-box;
 }
 
-/* Image column: fixed width, vertically centered */
 .columns.columns2 .columns-img-col {
   flex: 0 0 400px;
   display: flex;
@@ -62,7 +61,6 @@
   height: 400px;
 }
 
-/* Image itself */
 .columns.columns2 .columns-img-col img {
   width: 100%;
   height: auto;
@@ -73,7 +71,6 @@
   box-sizing: border-box;
 }
 
-/* Text column: vertical centering, constrained width, more top padding for breathing room */
 .columns.columns2 > div > div:not(.columns-img-col) {
   flex: 1 1 0;
   max-width: 440px;
@@ -84,7 +81,6 @@
   padding-top: 32px;
 }
 
-/* Heading tweaks for color/weight/spacing */
 .columns.columns2 h1 {
   font-size: 2.2rem;
   color: #555;
@@ -94,7 +90,6 @@
   line-height: 1.2;
 }
 
-/* Paragraph styling */
 .columns.columns2 p {
   font-size: 1rem;
   color: #666;
@@ -102,14 +97,14 @@
   margin-bottom: 16px;
 }
 
-/* Responsive stacking for smaller screens */
-@media (max-width: 900px) {
+@media (width <= 900px) {
   .columns.columns2 > div {
     flex-direction: column;
     align-items: stretch;
     gap: 24px;
     padding: 32px 0;
   }
+
   .columns.columns2 .columns-img-col {
     flex: unset;
     height: auto;
@@ -117,14 +112,176 @@
     justify-content: center;
     max-width: 100%;
   }
+
   .columns.columns2 .columns-img-col img {
     max-width: 100%;
     max-height: 300px;
   }
+
   .columns.columns2 > div > div:not(.columns-img-col) {
     max-width: 100%;
     height: auto;
     justify-content: flex-start;
     padding-top: 0;
+  }
+}
+
+
+.columns.columns3 {
+  padding-top: 14px;
+  background: #fff;
+}
+
+/* Grid layout with proportions closer to the original design */
+.columns.columns3 > div {
+  display: grid;
+  grid-template-columns: 32% 1fr;
+  gap: 28px;
+  align-items: start;
+  width: 100%;
+}
+
+/* Responsive stacking and reduced spacing for mobile */
+@media (width <= 900px) {
+  .columns.columns3 > div {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* Image column: aspect ratio and sizing closer to original */
+.columns.columns3 > div > div:first-child {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 16 / 9;
+  min-height: 130px;
+  max-height: 154px;
+  background: #ededed;
+  border-radius: 16px;
+  margin: 0;
+  box-shadow: none;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.columns.columns3 > div > div:first-child::after {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 2px 6px rgb(0 0 0 / 8%);
+  z-index: 2;
+  display: block;
+  pointer-events: none;
+  content: '';
+}
+
+.columns.columns3 > div > div:first-child::before {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 14px solid #666;
+  transform: translate(-38%, -50%);
+  z-index: 3;
+  display: block;
+  pointer-events: none;
+  content: '';
+}
+
+@media (width <= 900px) {
+  .columns.columns3 > div > div:first-child {
+    max-width: 100%;
+    min-height: 75px;
+    max-height: 90px;
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* Tighter vertical rhythm for text column */
+.columns.columns3 > div > div:last-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 5px;
+  margin-top: 0;
+  margin-bottom: 0;
+  width: 100%;
+  max-width: 470px;
+}
+
+/* Heading: smaller and more compact, divider closer */
+.columns.columns3 > div > div:last-child h1 {
+  font-size: 1.6rem;
+  color: #444;
+  font-weight: 600;
+  line-height: 1.11;
+  margin: 0 0 2px;
+  max-width: 440px;
+  letter-spacing: -0.01em;
+  position: relative;
+  padding-top: 7px;
+}
+
+/* Divider line: very close to heading */
+.columns.columns3 > div > div:last-child h1::before {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #666;
+  border-radius: 1px;
+  margin-bottom: 3px;
+  position: absolute;
+  left: 0;
+  top: -10px;
+  content: '';
+  pointer-events: none;
+}
+
+/* Paragraphs: tighter and slightly smaller */
+.columns.columns3 > div > div:last-child p {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  margin: 0 0 1px;
+  max-width: 470px;
+}
+
+/* Last line: smaller, visually separated, indented */
+.columns.columns3 > div > div:last-child p:last-child {
+  margin-top: 7px;
+  color: #444;
+  font-size: 0.8rem;
+  padding-left: 3px;
+}
+
+/* Ensure both columns are always top-aligned */
+.columns.columns3 > div > div:first-child,
+.columns.columns3 > div > div:last-child {
+  align-self: flex-start;
+}
+
+@media (width <= 600px) {
+  .columns.columns3 {
+    padding-top: 2px;
+  }
+
+  .columns.columns3 > div {
+    gap: 9px;
+  }
+
+  .columns.columns3 > div > div:last-child {
+    gap: 2px;
+    max-width: 100%;
   }
 }
