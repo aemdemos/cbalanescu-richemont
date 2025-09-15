@@ -546,9 +546,95 @@
   letter-spacing: 0.01em;
 }
 
-/* Hide unwanted images or lists if present in this block */
 .columns.columns10 img,
 .columns.columns10 ul,
 .columns.columns10 li {
   display: none;
+}
+
+
+.columns.columns15 {
+  background: #fff;
+  padding: 0;
+}
+
+/* Grid layout: 2 rows, 3 columns */
+.columns.columns15 > div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 1fr;
+  gap: 0 32px; /* 32px horizontal gap between columns */
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove default spacing for grid inner items */
+.columns.columns15 > div > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 0 24px;
+  box-sizing: border-box;
+  text-align: center;
+  color: #17394d;
+  min-width: 0; /* Prevent overflow */
+}
+
+/* Add horizontal divider for the second row */
+.columns.columns15 > div:nth-child(2) > div {
+  border-top: 1px solid #e0e0e0;
+}
+
+/* Remove margin from children to avoid stacking */
+.columns.columns15 > div > div > p {
+  margin: 0;
+}
+
+/* Large value styling */
+.columns.columns15 > div > div > p:first-child {
+  font-size: 2.2rem;
+  color: #17394d;
+  margin-bottom: 8px;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+
+/* Label styling */
+.columns.columns15 > div > div > p:last-child {
+  font-size: 1rem;
+  color: #17394d;
+  font-weight: 400;
+  line-height: 1.3;
+  margin-top: 0;
+}
+
+/* Optional: spacing for long sublabels */
+
+/* Add horizontal gutter (gap) between grid items */
+.columns.columns15 > div > div:not(:last-child) {
+  margin-right: 24px;
+}
+
+/* Responsive: Stack columns on small screens */
+@media (width <= 800px) {
+  .columns.columns15 > div {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .columns.columns15 > div > div {
+    padding: 24px 0;
+    border-top: none;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .columns.columns15 > div:nth-child(2) > div {
+    border-top: none;
+  }
+
+  .columns.columns15 > div > div:last-child {
+    border-bottom: none;
+  }
 }
