@@ -45,3 +45,135 @@
     padding: 40px 32px;
   }
 }
+
+.hero.hero8 {
+  width: 100vw;
+  min-height: 80vh;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url('./media_1c1f3dc9585b15bb29b8a25fe7852ecffa0e78082.jpg?width=2000&format=jpg&optimize=medium');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Hide the DOM image; use only background image */
+.hero.hero8 > div:first-child {
+  display: none;
+}
+
+/* Flex centering for inner content wrapper. Remove fixed height. */
+.hero.hero8 > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+
+  /* Remove any vertical offset */
+}
+
+/* Center the actual text headline and allow for responsive width */
+.hero.hero8 > div:nth-child(2) > div > p:first-child {
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin: 0;
+  padding: 0 2rem;
+  line-height: 1.2;
+  text-align: center;
+  max-width: 950px;
+  letter-spacing: 0.01em;
+  align-self: center;
+
+  /* Remove any vertical offset */
+}
+
+/* Hide any extra DOM content */
+.hero.hero8 > div:nth-child(2) > div > p:not(:first-child),
+.hero.hero8 > div:nth-child(2) > div > ul,
+.hero.hero8 > div:nth-child(2) > div > img,
+.hero.hero8 > div:nth-child(2) > div > li {
+  display: none;
+}
+
+/* Down-arrow icon at bottom center */
+.hero.hero8 .button-container {
+  position: absolute;
+  left: 50%;
+  bottom: 32px;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  pointer-events: auto;
+}
+
+/* Remove button background, make it transparent, hide text */
+.hero.hero8 .button-container .button {
+  background: none;
+  border: none;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: none;
+  font-size: 0;
+  color: #dedede;
+  padding: 0;
+  margin: 0;
+}
+
+/* Arrow shape using borders, no content property */
+.hero.hero8 .button-container .button::before {
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-left: 3px solid #dedede;
+  border-bottom: 3px solid #dedede;
+  transform: rotate(45deg);
+  border-radius: 1.5px;
+  margin: auto;
+}
+
+/* Responsive headline size and block height for mobile */
+@media (width <= 600px) {
+  .hero.hero8 {
+    min-height: 50vh;
+    height: 65vh;
+  }
+
+  .hero.hero8 > div:nth-child(2) > div > p:first-child {
+    font-size: 1.3rem;
+    padding: 0 1rem;
+    max-width: 95vw;
+  }
+
+  .hero.hero8 .button-container {
+    bottom: 16px;
+    width: 28px;
+    height: 28px;
+  }
+
+  .hero.hero8 .button-container .button::before {
+    width: 20px;
+    height: 20px;
+    border-left-width: 2px;
+    border-bottom-width: 2px;
+  }
+}
