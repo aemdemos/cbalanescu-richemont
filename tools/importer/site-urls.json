@@ -49,12 +49,6 @@
       "source": "MANUAL",
       "targetPath": "/talent",
       "id": "dd531e25fa43c82784d78b61c4bdfbcf9c15fe53"
-    },
-    {
-      "url": "https://www.richemont.com/talent/view-our-jobs/",
-      "source": "MANUAL",
-      "targetPath": "/talent/view-our-jobs",
-      "id": "1f25f438927db8f217753f89e08048dcb550afda"
     }
   ],
   "lastCrawled": "MANUAL",
