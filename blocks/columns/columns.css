@@ -132,7 +132,6 @@
   background: #fff;
 }
 
-/* Grid layout with proportions closer to the original design */
 .columns.columns3 > div {
   display: grid;
   grid-template-columns: 32% 1fr;
@@ -141,7 +140,6 @@
   width: 100%;
 }
 
-/* Responsive stacking and reduced spacing for mobile */
 @media (width <= 900px) {
   .columns.columns3 > div {
     grid-template-columns: 1fr;
@@ -149,7 +147,6 @@
   }
 }
 
-/* Image column: aspect ratio and sizing closer to original */
 .columns.columns3 > div > div:first-child {
   width: 100%;
   max-width: 420px;
@@ -207,7 +204,6 @@
   }
 }
 
-/* Tighter vertical rhythm for text column */
 .columns.columns3 > div > div:last-child {
   display: flex;
   flex-direction: column;
@@ -220,7 +216,6 @@
   max-width: 470px;
 }
 
-/* Heading: smaller and more compact, divider closer */
 .columns.columns3 > div > div:last-child h1 {
   font-size: 1.6rem;
   color: #444;
@@ -233,7 +228,6 @@
   padding-top: 7px;
 }
 
-/* Divider line: very close to heading */
 .columns.columns3 > div > div:last-child h1::before {
   display: block;
   width: 24px;
@@ -248,7 +242,6 @@
   pointer-events: none;
 }
 
-/* Paragraphs: tighter and slightly smaller */
 .columns.columns3 > div > div:last-child p {
   color: #666;
   font-size: 0.9rem;
@@ -257,7 +250,6 @@
   max-width: 470px;
 }
 
-/* Last line: smaller, visually separated, indented */
 .columns.columns3 > div > div:last-child p:last-child {
   margin-top: 7px;
   color: #444;
@@ -265,7 +257,6 @@
   padding-left: 3px;
 }
 
-/* Ensure both columns are always top-aligned */
 .columns.columns3 > div > div:first-child,
 .columns.columns3 > div > div:last-child {
   align-self: flex-start;
@@ -283,5 +274,94 @@
   .columns.columns3 > div > div:last-child {
     gap: 2px;
     max-width: 100%;
+  }
+}
+
+
+.columns.columns5 > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 98vh;
+  padding-top: 0;
+  padding-bottom: 0;
+  gap: 80px;
+}
+
+.columns.columns5 > div > div:first-child {
+  flex: 0 1 650px;
+  max-width: 650px;
+  min-width: 320px;
+  margin-left: 2vw;
+  margin-right: 0;
+  width: 100%;
+}
+
+.columns.columns5 > div > .columns-img-col {
+  flex: 1 1 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 0;
+  max-width: none;
+}
+
+.columns.columns5 .columns-img-col img,
+.columns.columns5 .columns-img-col picture {
+  width: auto;
+  max-width: 100%;
+  max-height: 96vh;
+  height: auto;
+  display: block;
+}
+
+.columns.columns5 h1 {
+  color: #353535;
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  margin-top: 0;
+}
+
+.columns.columns5 p {
+  color: #353535;
+  font-size: 1.07rem;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+
+.columns.columns5 p:last-child {
+  margin-bottom: 0;
+}
+
+@media (width <= 900px) {
+  .columns.columns5 > div {
+    flex-direction: column;
+    min-height: unset;
+    gap: 32px;
+    padding: 32px 0 0;
+  }
+
+  .columns.columns5 > div > div:first-child,
+  .columns.columns5 > div > .columns-img-col {
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    min-width: 0;
+  }
+
+  .columns.columns5 h1 {
+    font-size: 2rem;
+  }
+
+  .columns.columns5 p {
+    font-size: 1rem;
+  }
+
+  .columns.columns5 .columns-img-col img,
+  .columns.columns5 .columns-img-col picture {
+    max-height: 50vh;
   }
 }
