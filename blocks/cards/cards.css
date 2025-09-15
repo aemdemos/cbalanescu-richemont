@@ -733,8 +733,7 @@
 }
 
 .cards.cards13 .cards-card-body a {
-  word-break: break-word;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
 }
 
 
@@ -747,7 +746,6 @@
   list-style: none;
 }
 
-/* Card: compact, all left-aligned except image */
 .cards.cards17 > ul > li {
   background: #fff;
   border: none;
@@ -764,7 +762,6 @@
   min-height: 220px;
 }
 
-/* Image area: logo centered horizontally, minimal top/bottom padding */
 .cards.cards17 .cards-card-image {
   width: 100%;
   display: flex;
@@ -785,7 +782,6 @@
   margin: 0 auto;
 }
 
-/* Body: compact stack, left-aligned, matching left padding */
 .cards.cards17 .cards-card-body {
   width: 100%;
   padding: 2px 32px 8px;
@@ -802,7 +798,6 @@
   text-align: left;
 }
 
-/* LABEL: tight gap below */
 .cards.cards17 .cards-card-body > p:first-child {
   font-size: 15px;
   letter-spacing: 2px;
@@ -813,7 +808,6 @@
   font-weight: 400;
 }
 
-/* TITLE: tight gap below */
 .cards.cards17 .cards-card-body > p:nth-child(2) {
   font-size: 1.08rem;
   color: #303030;
@@ -823,7 +817,6 @@
   text-transform: none;
 }
 
-/* Download link: left-aligned, closely grouped under card text */
 .cards.cards17 .cards-card-body .button-container {
   width: 100%;
   display: flex;
@@ -835,7 +828,6 @@
   padding: 0;
 }
 
-/* Download link styles, override .button from base */
 .cards.cards17 .cards-card-body .button {
   background: none;
   border: none;
@@ -851,7 +843,6 @@
   text-align: left;
 }
 
-/* Download icon: left-edge, visually aligned with text */
 .cards.cards17 .cards-card-body .button::before {
   display: inline-block;
   vertical-align: middle;
@@ -870,7 +861,6 @@
   background: none;
 }
 
-/* Responsive: maintain compactness and alignment */
 @media (width <= 900px) {
   .cards.cards17 > ul {
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -895,7 +885,6 @@
   }
 }
 
-/* Ensure all text left-aligned */
 .cards.cards17 .cards-card-body,
 .cards.cards17 .cards-card-body > p,
 .cards.cards17 .cards-card-body .button-container,
@@ -903,4 +892,79 @@
   text-align: left;
   align-items: flex-start;
   justify-content: flex-start;
+}
+
+
+.cards.cards21 {
+  background: #F5F5F3;
+  padding: 40px 0;
+}
+
+/* Grid for card layout */
+.cards.cards21 > ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Card styling and vertical centering */
+.cards.cards21 > ul > li {
+  background: #fff;
+  border: none;
+  min-height: 180px;
+  display: flex;
+  align-items: center;     /* Vertically center content */
+  justify-content: center; /* Horizontally center content */
+  box-sizing: border-box;
+  padding: 24px 0;
+}
+
+/* Center the logo/text block */
+.cards.cards21 .cards-card-body {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  text-align: center;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* Remove display: inline which may have hidden the content in previous CSS */
+.cards.cards21 .cards-card-body p,
+.cards.cards21 .cards-card-body p,
+.cards.cards21 .cards-card-body strong {
+  color: #27485A;
+  font-weight: 400;
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 0;
+  white-space: normal;
+  overflow-wrap: break-word;
+  max-width: 90%;
+  line-height: 1.35;
+
+  /* display property intentionally omitted to prevent collapse */
+}
+
+/* Responsive grid for tablet/mobile */
+@media (width <= 1000px) {
+  .cards.cards21 > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width <= 600px) {
+  .cards.cards21 > ul {
+    grid-template-columns: 1fr;
+  }
+
+  .cards.cards21 {
+    padding: 24px 0;
+  }
 }
