@@ -25,3 +25,145 @@
   aspect-ratio: 4 / 3;
   object-fit: cover;
 }
+
+
+.cards.cards1 {
+  background: #fff;
+  padding: 50px 0;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+/* Grid: 3 columns, tighter gap */
+.cards.cards1 > ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0 12px;
+  box-sizing: border-box;
+}
+
+/* Cards: slightly narrower for more compact look */
+.cards.cards1 > ul > li {
+  background: #fff;
+  border: none;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  max-width: 340px;
+  min-width: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Image: slightly taller for better match */
+.cards.cards1 .cards-card-image {
+  width: 100%;
+  aspect-ratio: 4 / 2.9;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.cards.cards1 .cards-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Card body: more compact vertical spacing */
+.cards.cards1 .cards-card-body {
+  flex: 1 1 auto;
+  padding: 20px 18px 16px;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  min-height: 0;
+}
+
+/* Headline: slightly less space below */
+.cards.cards1 .cards-card-body h2 {
+  color: #4a4a4a;
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 14px;
+  line-height: 1.2;
+}
+
+/* Paragraphs: compact, balanced */
+.cards.cards1 .cards-card-body p:not(.button-container) {
+  color: #666;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 14px;
+  margin-top: 0;
+}
+
+/* "Read more" link: left-aligned, visually balanced */
+.cards.cards1 .cards-card-body .button-container {
+  margin-top: 10px;
+}
+
+/* "Read more" link as a text link */
+.cards.cards1 .cards-card-body .button {
+  background: none;
+  border: none;
+  color: #0070c0;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 0;
+  text-decoration: underline;
+  text-align: left;
+  border-radius: 0;
+  margin: 0;
+  display: inline-block;
+  box-shadow: none;
+  line-height: inherit;
+  min-width: 0;
+}
+
+.cards.cards1 .cards-card-body .button:hover,
+.cards.cards1 .cards-card-body .button:focus {
+  color: #005a99;
+  background: none;
+  text-decoration: underline;
+}
+
+/* Remove bullets from any nested lists */
+.cards.cards1 ul, 
+.cards.cards1 ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Responsive: stack cards, keep visual balance */
+@media (width <= 1100px) {
+  .cards.cards1 {
+    padding: 36px 0;
+    max-width: 100%;
+  }
+
+  .cards.cards1 > ul {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 0 4vw;
+  }
+
+  .cards.cards1 > ul > li {
+    max-width: 95vw;
+  }
+
+  .cards.cards1 .cards-card-body {
+    padding: 18px 4vw 14px;
+  }
+}
