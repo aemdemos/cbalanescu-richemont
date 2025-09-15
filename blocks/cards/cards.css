@@ -384,7 +384,6 @@
   padding: 0;
 }
 
-/* Card container: keep cards the same height and visually balanced */
 .cards.cards11 > ul > li {
   background: #fff;
   border: none;
@@ -395,7 +394,6 @@
   padding: 0;
 }
 
-/* Image styling: taller and visually balanced */
 .cards.cards11 .cards-card-image {
   width: 100%;
   height: 240px;
@@ -406,7 +404,6 @@
   align-items: stretch;
 }
 
-/* Make sure image covers the full area */
 .cards.cards11 .cards-card-image img {
   width: 100%;
   height: 100%;
@@ -414,7 +411,6 @@
   display: block;
 }
 
-/* Text area: more generous left/right and bottom padding, visually center content */
 .cards.cards11 .cards-card-body {
   flex: 1;
   display: flex;
@@ -427,13 +423,11 @@
   line-height: 1.7;
 }
 
-/* Remove extra paragraph margins */
 .cards.cards11 .cards-card-body p {
   margin: 0;
   padding: 0;
 }
 
-/* Heading effect: larger, bold, with more separation */
 .cards.cards11 .cards-card-body p::first-line {
   font-size: 1.6em;
   font-weight: 700;
@@ -442,13 +436,11 @@
   margin-bottom: 0.8em;
 }
 
-/* Ensure everything stretches vertically for even card heights */
 .cards.cards11 > ul > li,
 .cards.cards11 .cards-card-body {
   height: 100%;
 }
 
-/* RESPONSIVE: 2 columns on medium, 1 column on small screens */
 @media (width <= 1200px) {
   .cards.cards11 > ul {
     grid-template-columns: repeat(2, 1fr);
@@ -461,4 +453,142 @@
     grid-template-columns: 1fr;
     gap: 2rem;
   }
+}
+
+
+.cards.cards12 {
+  min-height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  background: var(--background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.cards.cards12 > ul {
+  /* 3x3 grid for desktop: maintains square block and best matches original layout */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 0;
+  width: 90vw;
+  max-width: 900px;
+  min-width: 300px;
+  min-height: 300px;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  place-items: stretch stretch;
+  place-items: center stretch;
+}
+
+/* Responsive collapse: keep grid compact and centered */
+@media (width <= 900px) {
+  .cards.cards12 > ul {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    max-width: 650px;
+    aspect-ratio: unset;
+    min-width: 200px;
+    min-height: 200px;
+  }
+}
+
+@media (width <= 600px) {
+  .cards.cards12 > ul {
+    grid-template-columns: 1fr;
+    grid-template-rows: unset;
+    max-width: 98vw;
+    aspect-ratio: unset;
+    min-width: 100px;
+    min-height: 100px;
+  }
+}
+
+/* Cards remain perfectly square, stretch to fill cell */
+.cards.cards12 > ul > li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border: none;
+  background: none;
+  box-shadow: none;
+  min-width: 0;
+  min-height: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Card image fills container */
+.cards.cards12 .cards-card-image {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  height: 100%;
+}
+
+.cards.cards12 .cards-card-image picture,
+.cards.cards12 .cards-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  display: block;
+}
+
+/* Overlay and center card text */
+.cards.cards12 .cards-card-body {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 60%;
+  max-width: 90%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+  z-index: 2;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  box-shadow: none;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Remove button styles and container */
+.cards.cards12 .cards-card-body .button-container,
+.cards.cards12 .cards-card-body .button,
+.cards.cards12 .cards-card-body a.button {
+  display: none;
+}
+
+/* Brand name styling */
+.cards.cards12 .cards-card-body strong,
+.cards.cards12 .cards-card-body strong a {
+  color: #fff;
+  font-weight: 700;
+  font-size: 2.2rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-shadow: 0 2px 8px rgb(0 0 0 / 25%);
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+  display: inline;
+  pointer-events: auto;
+  line-height: 1.1;
 }
