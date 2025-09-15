@@ -31,3 +31,100 @@
     order: unset;
   }
 }
+
+
+.columns.columns2 {
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+/* Side-by-side columns, centered more vertically in page */
+.columns.columns2 > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  padding-top: 96px;
+  padding-bottom: 64px;
+  background: var(--background-color);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Image column: fixed width, vertically centered */
+.columns.columns2 .columns-img-col {
+  flex: 0 0 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
+}
+
+/* Image itself */
+.columns.columns2 .columns-img-col img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  max-width: 400px;
+  max-height: 400px;
+  display: block;
+  box-sizing: border-box;
+}
+
+/* Text column: vertical centering, constrained width, more top padding for breathing room */
+.columns.columns2 > div > div:not(.columns-img-col) {
+  flex: 1 1 0;
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 400px;
+  padding-top: 32px;
+}
+
+/* Heading tweaks for color/weight/spacing */
+.columns.columns2 h1 {
+  font-size: 2.2rem;
+  color: #555;
+  font-weight: 400;
+  margin-bottom: 24px;
+  margin-top: 0;
+  line-height: 1.2;
+}
+
+/* Paragraph styling */
+.columns.columns2 p {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+/* Responsive stacking for smaller screens */
+@media (max-width: 900px) {
+  .columns.columns2 > div {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+    padding: 32px 0;
+  }
+  .columns.columns2 .columns-img-col {
+    flex: unset;
+    height: auto;
+    margin-bottom: 16px;
+    justify-content: center;
+    max-width: 100%;
+  }
+  .columns.columns2 .columns-img-col img {
+    max-width: 100%;
+    max-height: 300px;
+  }
+  .columns.columns2 > div > div:not(.columns-img-col) {
+    max-width: 100%;
+    height: auto;
+    justify-content: flex-start;
+    padding-top: 0;
+  }
+}
