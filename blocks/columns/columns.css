@@ -365,3 +365,120 @@
     max-height: 50vh;
   }
 }
+
+
+.columns.columns9 {
+  background: #f7f7f7;
+  padding: 32px 0 36px;
+  overflow-x: hidden;
+}
+
+.columns.columns9 > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0;
+  position: relative;
+  max-width: 860px;
+  margin: 0 auto;
+  min-height: 120px;
+}
+
+/* Columns: narrower, minimal padding, top alignment for heading match */
+.columns.columns9 > div > div {
+  flex: 0 1 320px;
+  max-width: 328px;
+  min-width: 0;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 0 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0;
+  padding-top: 0;
+}
+
+/* Remove any top padding for perfect vertical heading alignment */
+
+/* Remove left/right padding at block edges to maximize central alignment */
+.columns.columns9 > div > div:first-child {
+  padding-left: 0;
+  padding-right: 6px;
+}
+
+.columns.columns9 > div > div:last-child {
+  padding-right: 0;
+  padding-left: 6px;
+}
+
+/* Divider: vertical line centered, matches content height */
+.columns.columns9 > div::before {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 100%;
+  background: #d3d3d3;
+  z-index: 1;
+  pointer-events: none;
+  content: "";
+}
+
+/* Headings */
+.columns.columns9 h3 {
+  font-size: 14px;
+  color: #888;
+  font-weight: 400;
+  margin: 0 0 14px;
+  text-align: center;
+  text-transform: none;
+  letter-spacing: 0.01em;
+}
+
+/* Paragraphs */
+.columns.columns9 p {
+  font-size: 18px;
+  color: #555;
+  margin: 0;
+  line-height: 1.36;
+  text-align: center;
+}
+
+/* Responsive: stack columns vertically, horizontal divider */
+@media (width <= 700px) {
+  .columns.columns9 > div {
+    flex-direction: column;
+    gap: 0;
+    max-width: 98vw;
+    min-height: unset;
+    padding: 0 8px;
+  }
+
+  .columns.columns9 > div > div {
+    padding: 8px 0 0;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .columns.columns9 > div > div:first-child {
+    padding-bottom: 32px;
+  }
+
+  .columns.columns9 > div > div:last-child {
+    padding-top: 32px;
+  }
+
+  .columns.columns9 > div::before {
+    left: 50%;
+    top: auto;
+    bottom: 0;
+    width: 60%;
+    height: 1px;
+    transform: translateX(-50%);
+  }
+}
