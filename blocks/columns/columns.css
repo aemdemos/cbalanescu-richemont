@@ -34,99 +34,6 @@
 }
 
 
-.columns.columns2 {
-  display: block;
-  padding: 0;
-  margin: 0;
-}
-
-.columns.columns2 > div {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 32px;
-  padding-top: 96px;
-  padding-bottom: 64px;
-  background: var(--background-color);
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.columns.columns2 .columns-img-col {
-  flex: 0 0 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 400px;
-}
-
-.columns.columns2 .columns-img-col img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1 / 1;
-  max-width: 400px;
-  max-height: 400px;
-  display: block;
-  box-sizing: border-box;
-}
-
-.columns.columns2 > div > div:not(.columns-img-col) {
-  flex: 1 1 0;
-  max-width: 440px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 400px;
-  padding-top: 32px;
-}
-
-.columns.columns2 h1 {
-  font-size: 2.2rem;
-  color: #555;
-  font-weight: 400;
-  margin-bottom: 24px;
-  margin-top: 0;
-  line-height: 1.2;
-}
-
-.columns.columns2 p {
-  font-size: 1rem;
-  color: #666;
-  line-height: 1.6;
-  margin-bottom: 16px;
-}
-
-@media (width <= 900px) {
-  .columns.columns2 > div {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 24px;
-    padding: 32px 0;
-  }
-
-  .columns.columns2 .columns-img-col {
-    flex: unset;
-    height: auto;
-    margin-bottom: 16px;
-    justify-content: center;
-    max-width: 100%;
-  }
-
-  .columns.columns2 .columns-img-col img {
-    max-width: 100%;
-    max-height: 300px;
-  }
-
-  .columns.columns2 > div > div:not(.columns-img-col) {
-    max-width: 100%;
-    height: auto;
-    justify-content: flex-start;
-    padding-top: 0;
-  }
-}
-
-
 .columns.columns3 {
   padding-top: 14px;
   background: #fff;
@@ -1147,7 +1054,6 @@
   padding: 0;
 }
 
-/* --- Wider grid for more horizontal breathing room --- */
 .columns.columns25 > div {
   display: grid;
   grid-template-columns: 238px 1.05fr 0.95fr 1.1fr;
@@ -1160,7 +1066,6 @@
   background: #b4c2c6;
 }
 
-/* Responsive: stack columns vertically on small screens */
 @media (width <= 900px) {
   .columns.columns25 > div {
     grid-template-columns: 1fr;
@@ -1170,13 +1075,12 @@
   }
 }
 
-/* --- Logo column: now aligned with headings --- */
 .columns.columns25 > div > div:first-child {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  padding-top: 0; /* Remove top padding so logo aligns with heading row */
+  padding-top: 0;
 }
 
 .columns.columns25 .columns-img-col {
@@ -1191,7 +1095,6 @@
   display: block;
 }
 
-/* --- Headings: slightly larger, tighter margin --- */
 .columns.columns25 h2 {
   color: #63686a;
   font-weight: 400;
@@ -1203,7 +1106,6 @@
   letter-spacing: 0.01em;
 }
 
-/* --- Remove bullets and tighten lists --- */
 .columns.columns25 ul {
   list-style: none;
   margin: 0 0 15px;
@@ -1220,7 +1122,6 @@
   align-items: center;
 }
 
-/* --- Links: gray, no underline, underline on hover --- */
 .columns.columns25 a {
   color: #63686a;
   text-decoration: none;
@@ -1230,7 +1131,6 @@
   text-decoration: underline;
 }
 
-/* --- Paragraphs: slightly larger, more vertical space --- */
 .columns.columns25 p {
   color: #63686a;
   font-size: 16px;
@@ -1238,7 +1138,6 @@
   line-height: 1.45;
 }
 
-/* --- Email sign up: input and button same height, wider input --- */
 .columns.columns25 > div > div:nth-child(2) p:nth-of-type(2),
 .columns.columns25 > div > div:nth-child(2) p:nth-of-type(3) {
   margin: 0;
@@ -1279,7 +1178,6 @@
   vertical-align: middle;
 }
 
-/* --- Social/accessibility icons: larger to match text height --- */
 .columns.columns25 > div > div:nth-child(2) ul:last-of-type li,
 .columns.columns25 > div > div:nth-child(4) ul li {
   display: flex;
@@ -1299,21 +1197,143 @@
   object-fit: contain;
 }
 
-/* QR code: restrict size and spacing */
 .columns.columns25 > div > div:nth-child(2) ul:last-of-type li picture img[alt="Qr Code"] {
   width: 48px;
   height: auto;
   margin: 4px 0 0;
 }
 
-/* Remove excessive vertical space between columns */
 .columns.columns25 > div > div {
   margin: 0;
   padding: 0;
   align-self: flex-start;
 }
 
-/* Tighter vertical spacing in lists */
 .columns.columns25 li + li {
   margin-top: 2px;
 }
+
+
+.columns.columns2 {
+  background: #fff;
+  margin: 0;
+  padding: 0;
+
+  /* Ensure the block's content is visible */
+  visibility: visible;
+  display: block;
+}
+
+/* Main row: two columns, side by side on desktop */
+.columns.columns2 > div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 40px;
+  padding: 48px 32px;
+  box-sizing: border-box;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: unset;
+}
+
+/* Left: image column */
+.columns.columns2 .columns-img-col {
+  flex: 0 1 640px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 640px;
+  min-width: 340px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Large necklace image, fills square */
+.columns.columns2 .columns-img-col img,
+.columns.columns2 .columns-img-col picture {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 640px;
+  max-height: 640px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Right: text column */
+.columns.columns2 > div > div:not(.columns-img-col) {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  max-width: 700px;
+  min-width: 320px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Heading and paragraph spacing */
+.columns.columns2 h1 {
+  font-size: 3.25rem;
+  color: #646464;
+  font-weight: 400;
+  margin: 0 0 36px;
+  line-height: 1.08;
+  letter-spacing: -1px;
+}
+
+.columns.columns2 p {
+  font-size: 1.25rem;
+  color: #6e6e6e;
+  line-height: 1.7;
+  margin: 0 0 28px;
+  font-weight: 400;
+  max-width: 40em;
+}
+
+.columns.columns2 em {
+  font-style: italic;
+}
+
+/* Responsive: stack vertically on small screens */
+@media (width <= 900px) {
+  .columns.columns2 > div {
+    flex-direction: column;
+    gap: 32px;
+    padding: 32px 12px;
+    max-width: 100%;
+  }
+
+  .columns.columns2 .columns-img-col,
+  .columns.columns2 > div > div:not(.columns-img-col) {
+    max-width: 100%;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .columns.columns2 .columns-img-col img,
+  .columns.columns2 .columns-img-col picture {
+    max-width: 100%;
+    max-height: 320px;
+    aspect-ratio: 1 / 1;
+  }
+
+  .columns.columns2 h1 {
+    font-size: 2.1rem;
+    margin-bottom: 20px;
+  }
+
+  .columns.columns2 p {
+    font-size: 1.08rem;
+    margin-bottom: 16px;
+  }
+}
+
+/* Remove excessive vertical whitespace in the section */
