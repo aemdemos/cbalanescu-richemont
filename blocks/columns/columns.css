@@ -1216,124 +1216,147 @@
 
 .columns.columns2 {
   background: #fff;
-  margin: 0;
-  padding: 0;
-
-  /* Ensure the block's content is visible */
-  visibility: visible;
-  display: block;
+  padding: 2vw 8vw;
+  box-sizing: border-box;
 }
 
-/* Main row: two columns, side by side on desktop */
 .columns.columns2 > div {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  justify-content: flex-start;
-  gap: 40px;
-  padding: 48px 32px;
-  box-sizing: border-box;
+  justify-content: center;
+  gap: 2vw;
   max-width: 1200px;
   margin: 0 auto;
-  min-height: unset;
-}
-
-/* Left: image column */
-.columns.columns2 .columns-img-col {
-  flex: 0 1 640px;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  max-width: 640px;
-  min-width: 340px;
-  margin: 0;
-  padding: 0;
+  min-height: 420px;
   box-sizing: border-box;
 }
 
-/* Large necklace image, fills square */
+/* Left column: larger width, logo fills horizontal space, nudged up */
+.columns.columns2 .columns-img-col {
+  flex: 0 0 47%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 230px;
+  width: 100%;
+  height: 100%;
+  margin-top: 1vw;
+}
+
 .columns.columns2 .columns-img-col img,
 .columns.columns2 .columns-img-col picture {
   display: block;
+  max-width: 100%;
   width: 100%;
   height: auto;
-  max-width: 640px;
-  max-height: 640px;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  margin: 0;
-  box-sizing: border-box;
+  object-fit: contain;
+  margin: 0 auto;
+  padding: 0;
 }
 
-/* Right: text column */
+/* Right column: tighter grouping, nudged up */
 .columns.columns2 > div > div:not(.columns-img-col) {
-  flex: 1 1 0;
+  flex: 1 1 53%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   justify-content: flex-start;
-  max-width: 700px;
-  min-width: 320px;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  align-items: flex-start;
+  gap: 1em;
+  min-width: 220px;
+  max-width: 680px;
+  height: auto;
+  margin-top: 1vw;
 }
 
-/* Heading and paragraph spacing */
+/* Heading: less space below, more impact */
 .columns.columns2 h1 {
-  font-size: 3.25rem;
-  color: #646464;
+  color: #626262;
+  font-size: 3.5rem;
   font-weight: 400;
-  margin: 0 0 36px;
-  line-height: 1.08;
-  letter-spacing: -1px;
+  line-height: 1.09;
+  margin: 0 0 0.25em;
+  letter-spacing: -0.5px;
 }
 
+/* Paragraph: nearly joined to button */
 .columns.columns2 p {
-  font-size: 1.25rem;
-  color: #6e6e6e;
-  line-height: 1.7;
-  margin: 0 0 28px;
+  color: #626262;
+  font-size: 1.45rem;
   font-weight: 400;
+  margin: 0 0 0.1em;
+  line-height: 1.5;
   max-width: 40em;
 }
 
-.columns.columns2 em {
-  font-style: italic;
+/* Button container: almost touching the paragraph */
+.columns.columns2 .button-container {
+  margin-top: 0.01em;
 }
 
-/* Responsive: stack vertically on small screens */
+/* Button: outline style, blue text, squared */
+.columns.columns2 .button-container .button {
+  border: 2px solid #174C66;
+  background: transparent;
+  color: #174C66;
+  font-size: 1.25rem;
+  padding: 0.7em 2em;
+  border-radius: 0;
+  font-weight: 400;
+  box-shadow: none;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  margin: 0;
+  letter-spacing: 0.01em;
+  line-height: 1.25;
+}
+
+.columns.columns2 .button-container .button:hover,
+.columns.columns2 .button-container .button:focus {
+  background: #174C66;
+  color: #fff;
+  border-color: #174C66;
+  text-decoration: none;
+}
+
 @media (width <= 900px) {
+  .columns.columns2 {
+    padding: 5vw 4vw 2vw;
+  }
+
   .columns.columns2 > div {
     flex-direction: column;
-    gap: 32px;
-    padding: 32px 12px;
-    max-width: 100%;
+    align-items: center;
+    gap: 4vw;
+    min-height: unset;
+    max-width: 100vw;
   }
 
   .columns.columns2 .columns-img-col,
   .columns.columns2 > div > div:not(.columns-img-col) {
-    max-width: 100%;
     min-width: 0;
+    max-width: 100%;
     width: 100%;
+    margin-top: 0;
   }
 
   .columns.columns2 .columns-img-col img,
   .columns.columns2 .columns-img-col picture {
     max-width: 100%;
-    max-height: 320px;
-    aspect-ratio: 1 / 1;
+    width: 100%;
+    height: auto;
   }
 
   .columns.columns2 h1 {
     font-size: 2.1rem;
-    margin-bottom: 20px;
+    margin-bottom: 0.4em;
   }
 
   .columns.columns2 p {
-    font-size: 1.08rem;
-    margin-bottom: 16px;
+    font-size: 1.1rem;
+    margin-bottom: 0.2em;
+  }
+
+  .columns.columns2 .button-container {
+    margin-top: 0.3em;
   }
 }
-
-/* Remove excessive vertical whitespace in the section */
