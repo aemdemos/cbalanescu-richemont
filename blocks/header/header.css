@@ -316,6 +316,7 @@ header .nav-bottom-container:empty {
 
 /* EDS Foundation */
 header { display: flex; }
+
 .header-wrapper .nav-wrapper {
   justify-content: center;
   align-items: center;
