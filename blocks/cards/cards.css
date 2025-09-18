@@ -23,8 +23,6 @@
 
 .cards > ul > li img {
   width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
 }
 
 
@@ -457,53 +455,39 @@
 
 
 .cards.cards12 {
-  min-height: 100vh;
-  width: 100vw;
-  margin: 0;
-  padding: 0;
   background: var(--background-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
+  padding: 5rem 1rem;
 }
 
 .cards.cards12 > ul {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  gap: 0;
-  width: 90vw;
-  max-width: 900px;
-  min-width: 300px;
-  min-height: 300px;
-  aspect-ratio: 1 / 1;
-  margin: 0 auto;
+  gap: 20px;
+  width: 100%;
+  margin: 0;
   padding: 0;
   list-style: none;
-  place-items: stretch stretch;
-  place-items: center stretch;
 }
 
 @media (width <= 900px) {
+  .cards.cards12 {
+    padding: 0 0.75rem;
+  }
+  
   .cards.cards12 > ul {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    max-width: 650px;
-    aspect-ratio: unset;
-    min-width: 200px;
-    min-height: 200px;
+    gap: 15px;
   }
 }
 
 @media (width <= 600px) {
+  .cards.cards12 {
+    padding: 0 0.5rem;
+  }
+  
   .cards.cards12 > ul {
     grid-template-columns: 1fr;
-    grid-template-rows: unset;
-    max-width: 98vw;
-    aspect-ratio: unset;
-    min-width: 100px;
-    min-height: 100px;
+    gap: 12px;
   }
 }
 
@@ -511,32 +495,23 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  aspect-ratio: 1 / 1;
   overflow: hidden;
   border: none;
   background: none;
   box-shadow: none;
-  min-width: 0;
-  min-height: 0;
-  width: 100%;
-  height: 100%;
 }
 
 .cards.cards12 .cards-card-image {
-  flex: 1 1 auto;
-  display: flex;
-  align-items: stretch;
+  display: block;
+  line-height: 0;
   width: 100%;
-  height: 100%;
+  cursor: pointer;
 }
 
 .cards.cards12 .cards-card-image picture,
 .cards.cards12 .cards-card-image img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  aspect-ratio: 1 / 1;
+  height: auto;
   display: block;
 }
 

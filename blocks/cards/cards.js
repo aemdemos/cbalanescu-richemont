@@ -21,4 +21,21 @@ export default function decorate(block) {
   });
   block.textContent = '';
   block.append(ul);
+
+  // Add click functionality for cards12 variant
+  if (block.classList.contains('cards12')) {
+    ul.querySelectorAll('li').forEach((card) => {
+      const link = card.querySelector('a');
+      if (link) {
+        const cardImage = card.querySelector('.cards-card-image');
+        if (cardImage) {
+          cardImage.style.cursor = 'pointer';
+          cardImage.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.location.href = link.href;
+          });
+        }
+      }
+    });
+  }
 }
