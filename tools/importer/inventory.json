@@ -437,12 +437,6 @@
         {
           "url": "https://www.richemont.com/our-maisons/",
           "urlHash": "57185fa3f1b5ee9559f479718bde62073ec85b25",
-          "uuid": "57185fa3-07-08000bcf377fb03b10195ae07850ae9968658f7f",
-          "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[6]"
-        },
-        {
-          "url": "https://www.richemont.com/our-maisons/",
-          "urlHash": "57185fa3f1b5ee9559f479718bde62073ec85b25",
           "uuid": "57185fa3-13-b6e88befaff6806a5a689f168ee36ad516c80f96",
           "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[12]"
         }
@@ -535,6 +529,12 @@
           "urlHash": "57185fa3f1b5ee9559f479718bde62073ec85b25",
           "uuid": "57185fa3-11-778146753469d17283a77f694c01a6801a595db0",
           "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[10]"
+        },
+        {
+          "url": "https://www.richemont.com/our-maisons/",
+          "urlHash": "57185fa3f1b5ee9559f479718bde62073ec85b25",
+          "uuid": "57185fa3-07-08000bcf377fb03b10195ae07850ae9968658f7f",
+          "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[6]"
         }
       ]
     },
