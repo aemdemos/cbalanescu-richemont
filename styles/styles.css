@@ -89,6 +89,10 @@ body {
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
   line-height: 1.6;
+  font-synthesis: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 body.appear {
@@ -111,17 +115,31 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0.8em;
   margin-bottom: 0.25em;
   font-family: var(--heading-font-family);
-  font-weight: 600;
   line-height: 1.25;
   scroll-margin: 40px;
 }
 
 h1 {
-  font-size: var(--heading-font-size-xxl);
+  margin-top: 0.8em;
+  margin-bottom: 0.25em;
+  padding-bottom: 1.25rem;
+  font-family: "Sabon", "Sabon fallback to Times New Roman", "Sabon fallback to serif", serif;
+  font-size: 3.125rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 3.75rem;
+  color: #515454;
+  letter-spacing: -0.02em;
 }
 
 h2 {
-  font-size: var(--heading-font-size-xl);
+  margin-top: 0.8em;
+  margin-bottom: 0.25em;
+  font-family: "Sabon", "Sabon fallback to Times New Roman", "Sabon fallback to serif", serif;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 400;
+  color: #515454;
 }
 
 h3 {
@@ -143,6 +161,15 @@ h6 {
 p, dl, ol, ul, pre, blockquote {
   margin-top: 0.8em;
   margin-bottom: 0.25em;
+}
+
+p {
+  font-family: "Sabon", "Sabon fallback to Times New Roman", "Sabon fallback to serif", serif;
+  font-size: 1.35rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 2.25rem;
+  color: #515454;
 }
 
 code, pre {
@@ -183,17 +210,18 @@ a.button:any-link, button {
   display: inline-block;
   max-width: 100%;
   margin: 12px 0;
-  border: 2px solid transparent;
-  border-radius: 2.4em;
-  padding: 0.5em 1.2em;
-  font-family: var(--body-font-family);
+  padding: 5px 32px;
+  font-family: "ITC Avant Garde Gothic", "ITC Avant Garde Gothic Fallback", "ITC AGG fallback to Arial", "ITC AGG fallback to sans-serif", sans-serif;
+  font-size: 1.125rem;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.25;
   text-align: center;
   text-decoration: none;
-  background-color: var(--link-color);
-  color: var(--background-color);
+  background-color: rgba(0, 0, 0, 0);
+  color: #004165;
+  border: 1px solid #004165;
+  border-radius: 0;
   cursor: pointer;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -201,7 +229,8 @@ a.button:any-link, button {
 }
 
 a.button:hover, a.button:focus, button:hover, button:focus {
-  background-color: var(--link-hover-color);
+  background-color: #004165;
+  color: #ffffff;
   cursor: pointer;
 }
 
@@ -211,9 +240,9 @@ button:disabled, button:disabled:hover {
 }
 
 a.button.secondary, button.secondary {
-  background-color: unset;
-  border: 2px solid currentcolor;
-  color: var(--text-color);
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid #004165;
+  color: #004165;
 }
 
 main img {
@@ -271,4 +300,8 @@ main .section.light, main .section.highlight {
 
 .section.section-2 {
   background: rgb(185 201 208) none repeat scroll 0% 0% / auto padding-box border-box;
+}
+
+.centered {
+  text-align: center;
 }
