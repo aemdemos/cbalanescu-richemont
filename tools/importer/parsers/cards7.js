@@ -1,70 +1,65 @@
 /* global WebImporter */
 export default function parse(element, { document }) {
-  // Find all image blocks (cards)
-  const cardBlocks = element.querySelectorAll('.image-block');
+  // Helper to extract all imageBlock elements from the grid
+  function getImageBlocks(root) {
+    // Find all .image-block containers inside the grid
+    return Array.from(root.querySelectorAll('.image-block'));
+  }
 
-  // Prepare the table rows
-  const rows = [];
-  // Header row as per spec
+  // Find the grid container (defensive: look for .grid-container)
+  const gridContainer = element.querySelector('.grid-container');
+  if (!gridContainer) return;
+
+  // Get all image blocks
+  const imageBlocks = getImageBlocks(gridContainer);
+
+  // Prepare header row
   const headerRow = ['Cards (cards7)'];
-  rows.push(headerRow);
+  const rows = [headerRow];
 
-  // For each card, create a row: [image, text]
-  cardBlocks.forEach((block) => {
-    // The image is inside an <a> which wraps the <img>
-    const link = block.querySelector('a');
-    const img = link ? link.querySelector('img') : block.querySelector('img');
-    if (!img) return; // Defensive: skip if no image
+  // For each image block, create a card row
+  imageBlocks.forEach((imgBlock) => {
+    // Find the image (mandatory)
+    const img = imgBlock.querySelector('img');
+    // Defensive: skip if no image
+    if (!img) return;
 
-    // Clean up style attribute (remove double semicolons)
-    if (img.hasAttribute('style')) {
-      img.setAttribute('style', img.getAttribute('style').replace(/;+/g, ';').replace(/;$/, ''));
-    }
+    // Find the link (optional, but in this HTML always present)
+    const link = imgBlock.querySelector('a');
 
-    // First cell: the image (with link if present)
-    let imageCell = link ? link.cloneNode(true) : img.cloneNode(true);
+    // Use the alt text for the card title, but also try to extract any visible text overlay if present
+    let titleText = '';
+    // Try to find overlay text (if any)
+    // In this HTML, the overlay is in the image itself, so fallback to alt
+    titleText = img.getAttribute('alt') || '';
+    titleText = titleText.trim();
 
-    // Second cell: the text overlay (title, etc)
-    // In this HTML, the text is visually overlaid on the image, but is not present in the DOM as text.
-    // We'll extract the alt attribute as the best available text content.
-    let textCell;
-    if (img && img.alt) {
-      const alt = img.alt;
-      let title = '';
-      let desc = '';
-      const logoIdx = alt.toLowerCase().indexOf('logo with');
-      if (logoIdx > 0) {
-        title = alt.slice(0, logoIdx).trim();
-        desc = alt.slice(logoIdx + 'logo with'.length).trim();
-      } else {
-        const withIdx = alt.toLowerCase().indexOf(' with ');
-        if (withIdx > 0) {
-          title = alt.slice(0, withIdx).trim();
-          desc = alt.slice(withIdx + 6).trim();
-        } else {
-          title = alt.trim();
-        }
-      }
-      const frag = document.createDocumentFragment();
-      if (title) {
-        const h3 = document.createElement('h3');
-        h3.textContent = title;
-        frag.appendChild(h3);
-      }
-      if (desc) {
-        const p = document.createElement('p');
-        p.textContent = desc;
-        frag.appendChild(p);
-      }
-      textCell = frag.childNodes.length ? Array.from(frag.childNodes) : [document.createTextNode(alt)];
+    // Create a heading element for the title
+    const heading = document.createElement('strong');
+    heading.textContent = titleText;
+
+    // If the link exists, wrap the heading in the link
+    let textContent;
+    if (link) {
+      const linkEl = document.createElement('a');
+      linkEl.href = link.href;
+      linkEl.appendChild(heading);
+      textContent = linkEl;
     } else {
-      textCell = [''];
+      textContent = heading;
     }
 
-    rows.push([imageCell, textCell]);
+    // Card row: [image, textContent]
+    // To ensure all text content is included, also add the alt text as a fallback if heading is empty
+    rows.push([
+      img,
+      textContent
+    ]);
   });
 
-  // Create the table and replace the original element
-  const table = WebImporter.DOMUtils.createTable(rows, document);
-  element.replaceWith(table);
+  // Create the block table
+  const block = WebImporter.DOMUtils.createTable(rows, document);
+
+  // Replace the original element
+  element.replaceWith(block);
 }
