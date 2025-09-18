@@ -367,6 +367,12 @@
           "urlHash": "e7f95c8319befe6b435db6c296990a9f7e1fec3a",
           "uuid": "e7f95c83-04-b44bfb6f91053e616228982ab0752280ea739906",
           "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[3]"
+        },
+        {
+          "url": "https://www.richemont.com/news-media/",
+          "urlHash": "c0f29da7a35e3bf5bbb232dd42d4e51ebc9ecce5",
+          "uuid": "c0f29da7-07-b44bfb6f91053e616228982ab0752280ea739906",
+          "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[3]"
         }
       ]
     },
@@ -697,21 +703,6 @@
           "uuid": "1c0e4436-04-b44bfb6f91053e616228982ab0752280ea739906",
           "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[3]",
           "section": "section-1"
-        }
-      ]
-    },
-    {
-      "name": "Columns",
-      "cluster": 24,
-      "source": "Columns",
-      "target": "Columns (columns24)",
-      "key": "columns24",
-      "instances": [
-        {
-          "url": "https://www.richemont.com/news-media/",
-          "urlHash": "c0f29da7a35e3bf5bbb232dd42d4e51ebc9ecce5",
-          "uuid": "c0f29da7-07-b44bfb6f91053e616228982ab0752280ea739906",
-          "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[3]"
         }
       ]
     },
