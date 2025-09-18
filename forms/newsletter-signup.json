@@ -1,0 +1,32 @@
+{
+  "total": 4,
+  "offset": 0,
+  "limit": 4,
+  "data": [
+    {
+      "Type": "heading",
+      "Value": "Sign up to our Press releases & news",
+      "Name": "newsletter-heading"
+    },
+    {
+      "Type": "fieldset",
+      "Name": "newsletter-form",
+      "Label": ""
+    },
+    {
+      "Type": "email",
+      "Name": "email",
+      "Label": " ",
+      "Placeholder": "Enter your email address",
+      "Value": "",
+      "Mandatory": "true",
+      "Fieldset": "newsletter-form"
+    },
+    {
+      "Type": "submit",
+      "Label": "Subscribe",
+      "Name": "submit",
+      "Fieldset": "newsletter-form"
+    }
+  ]
+}
