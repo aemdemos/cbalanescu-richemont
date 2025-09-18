@@ -439,6 +439,12 @@
           "urlHash": "a93c09f07574cb7b34b390333c5e0b6f8042cb2b",
           "uuid": "a93c09f0-02-b2198061dec525bcf2a9a6fb74e6f640c6dcd5ae",
           "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[1]"
+        },
+        {
+          "url": "https://www.richemont.com/our-maisons/van-cleef-arpels/",
+          "urlHash": "1c0e4436f85e0705dd90535e0d04f9cc9a4cbd55",
+          "uuid": "1c0e4436-02-b2198061dec525bcf2a9a6fb74e6f640c6dcd5ae",
+          "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[1]"
         }
       ]
     },
@@ -781,12 +787,6 @@
       "urlHash": "1c0e4436f85e0705dd90535e0d04f9cc9a4cbd55",
       "uuid": "1c0e4436-01-0ea0ae5ba1245dfb496167ef99f1633fc53b06ae",
       "xpath": "/html[1]/body[1]/nav[1]"
-    },
-    {
-      "url": "https://www.richemont.com/our-maisons/van-cleef-arpels/",
-      "urlHash": "1c0e4436f85e0705dd90535e0d04f9cc9a4cbd55",
-      "uuid": "1c0e4436-02-b2198061dec525bcf2a9a6fb74e6f640c6dcd5ae",
-      "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[1]"
     },
     {
       "url": "https://www.richemont.com/our-maisons/van-cleef-arpels/",
