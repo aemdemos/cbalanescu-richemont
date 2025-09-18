@@ -541,6 +541,13 @@
           "urlHash": "a93c09f07574cb7b34b390333c5e0b6f8042cb2b",
           "uuid": "a93c09f0-09-ad008083a3af911f145d285a995094d8bf6d0eb1",
           "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[6]/div[1]/div[1]/div[1]/div[1]/div[2]/section[1]/div[2]"
+        },
+        {
+          "url": "https://www.richemont.com/investors/",
+          "urlHash": "921776faaf9e5b26241d1f4ad54f23aedc27f57e",
+          "uuid": "921776fa-08-7e15f2add1d92005edf017dbf6c9b94058505444",
+          "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/section[1]/div[2]",
+          "section": "section-1"
         }
       ]
     },
@@ -590,22 +597,6 @@
           "urlHash": "1c0e4436f85e0705dd90535e0d04f9cc9a4cbd55",
           "uuid": "1c0e4436-14-b9dd36bec3c2c94426593fe95b3c3a58b97740a9",
           "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[12]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/ul[1]"
-        }
-      ]
-    },
-    {
-      "name": "Cards",
-      "cluster": 17,
-      "source": "Cards",
-      "target": "Cards (cards17)",
-      "key": "cards17",
-      "instances": [
-        {
-          "url": "https://www.richemont.com/investors/",
-          "urlHash": "921776faaf9e5b26241d1f4ad54f23aedc27f57e",
-          "uuid": "921776fa-08-7e15f2add1d92005edf017dbf6c9b94058505444",
-          "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[5]/div[1]/div[1]/div[1]/div[1]/div[2]/section[1]/div[2]",
-          "section": "section-1"
         }
       ]
     },
