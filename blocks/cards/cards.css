@@ -160,15 +160,15 @@
 
 .cards.cards4 {
   background: #fff;
-  padding: 0;
-  max-width: 880px;
-  margin: 0 auto;
+  padding: 5rem 4vw;
+  max-width: none;
+  margin: 0;
 }
 
 .cards.cards4 > ul {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  gap: 3rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -176,9 +176,13 @@
 }
 
 @media (width <= 900px) {
+  .cards.cards4 {
+    padding: 2rem 4vw;
+  }
+
   .cards.cards4 > ul {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 2rem;
   }
 }
 
@@ -204,8 +208,7 @@
 }
 
 .cards.cards4 > ul > li img {
-  max-width: 145px;
-  max-height: 70px;
+  max-width: 100%;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -223,31 +226,14 @@
   padding: 0 0 10px;
 }
 
-.cards.cards4 .cards-card-body .button {
-  display: block;
-  background: none;
-  border: none;
-  box-shadow: none;
-  border-radius: 0;
-  color: #002147;
-  font-size: 20px;
-  line-height: 1.3;
-  text-align: left;
-  margin: 0;
-  padding: 0;
+.cards.cards4 a {
+  color: inherit;
   text-decoration: none;
-  white-space: pre-line;
-  overflow-wrap: break-word;
-  font-weight: 500;
-  max-width: 80%;
-  overflow: visible;
 }
 
-.cards.cards4 .cards-card-body .button::first-line {
-  color: #979797;
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+.cards.cards4 a:hover {
+  color: inherit;
+  text-decoration: none;
 }
 
 .cards.cards4 .cards-card-image:empty {
@@ -376,36 +362,31 @@
 .cards.cards11 > ul {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2.8rem;
+  gap: 1.5rem;
   align-items: stretch;
   margin: 0;
   padding: 0;
 }
 
 .cards.cards11 > ul > li {
-  background: #fff;
   border: none;
+  background: none;
   display: flex;
   flex-direction: column;
-  min-height: 640px;
   box-sizing: border-box;
   padding: 0;
 }
 
 .cards.cards11 .cards-card-image {
   width: 100%;
-  height: 240px;
-  overflow: hidden;
-  background: #fff;
-  margin-bottom: 1.6rem;
-  display: flex;
-  align-items: stretch;
+  margin-bottom: 0;
+  display: block;
+  line-height: 0;
 }
 
 .cards.cards11 .cards-card-image img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   display: block;
 }
 
@@ -413,43 +394,42 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 0 2.4rem 3.2rem;
+  justify-content: flex-start;
+  padding: 1.5rem 1rem 1rem;
   margin: 0;
-  color: #333;
-  font-size: 1em;
-  line-height: 1.7;
+  background: none;
 }
 
-.cards.cards11 .cards-card-body p {
+.cards.cards11 .cards-card-body h2,
+.cards.cards11 .cards-card-body h3 {
+  margin: 0 0 0.75rem 0;
+  text-align: left;
+  font-size: 0.9em;
+}
+
+.cards.cards11 .cards-card-body p:not(.button-container) {
   margin: 0;
   padding: 0;
+  text-align: left;
+  font-size: 0.85em;
 }
 
-.cards.cards11 .cards-card-body p::first-line {
-  font-size: 1.6em;
-  font-weight: 700;
-  color: #222;
-  line-height: 1.15;
-  margin-bottom: 0.8em;
-}
-
-.cards.cards11 > ul > li,
-.cards.cards11 .cards-card-body {
-  height: 100%;
-}
 
 @media (width <= 1200px) {
   .cards.cards11 > ul {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2.4rem;
+    gap: 1.2rem;
   }
 }
 
 @media (width <= 700px) {
   .cards.cards11 > ul {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1rem;
+  }
+  
+  .cards.cards11 .cards-card-body {
+    padding: 1rem 0.75rem 0.75rem;
   }
 }
 
