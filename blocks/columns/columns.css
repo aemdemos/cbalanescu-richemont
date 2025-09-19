@@ -807,12 +807,6 @@
   }
 }
 
-
-.columns.columns25 {
-  background: #b4c2c6;
-  padding: 0;
-}
-
 .columns.columns25 > div {
   display: grid;
   grid-template-columns: 238px 1.05fr 0.95fr 1.1fr;
@@ -822,7 +816,6 @@
   margin: 0 auto;
   padding: 44px 0 40px;
   box-sizing: border-box;
-  background: #b4c2c6;
 }
 
 @media (width <= 900px) {
@@ -855,7 +848,7 @@
 }
 
 .columns.columns25 h2 {
-  color: #63686a;
+  color: #515451;
   font-weight: 400;
   margin: 0 0 12px;
   border-bottom: 1px solid #94a2a6;
@@ -872,7 +865,7 @@
 }
 
 .columns.columns25 li {
-  color: #63686a;
+  color: #515451;
   font-size: 16px;
   line-height: 1.45;
   margin: 0;
@@ -882,7 +875,7 @@
 }
 
 .columns.columns25 a {
-  color: #63686a;
+  color: #515451;
   text-decoration: none;
 }
 
@@ -891,7 +884,7 @@
 }
 
 .columns.columns25 p {
-  color: #63686a;
+  color: #515451;
   font-size: 16px;
   margin: 0 0 10px;
   line-height: 1.45;
@@ -907,7 +900,6 @@
   display: inline-block;
   background: #fff;
   border: 1px solid #e0e0e0;
-  color: #b4c2c6;
   width: 220px;
   height: 38px;
   max-width: 100%;

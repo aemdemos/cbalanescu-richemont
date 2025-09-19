@@ -26,10 +26,10 @@ export default function parse(element, { document }) {
       textContainer.appendChild(dateDiv);
     }
 
-    // Title (h3)
+    // Title (h2)
     const title = cardBody.querySelector('.card-title');
     if (title) {
-      const heading = document.createElement('h3');
+      const heading = document.createElement('h2');
       heading.textContent = title.textContent;
       textContainer.appendChild(heading);
     }
