@@ -9,7 +9,8 @@ footer .footer>div {
 }
 
 footer .footer p {
-  margin: 0;
+  margin: 1rem;
+  color: #515451;
 }
 
 @media (width>=900px) {

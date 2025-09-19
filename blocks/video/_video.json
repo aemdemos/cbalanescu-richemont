@@ -58,6 +58,12 @@
           "name": "placeholder_imageAlt",
           "value": "",
           "label": "Placeholder Image Alt Text"
+        },
+        {
+          "component": "aem-content",
+          "valueType": "string",
+          "name": "captions",
+          "label": "Captions (VTT file)"
         }
       ]
     }

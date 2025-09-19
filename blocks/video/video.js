@@ -54,7 +54,7 @@ function embedVimeo(url, autoplay, background) {
   return temp.children.item(0);
 }
 
-function getVideoElement(source, autoplay, background) {
+function getVideoElement(source, autoplay, background, captions) {
   const video = document.createElement('video');
   video.setAttribute('controls', '');
   if (autoplay) video.setAttribute('autoplay', '');
@@ -73,10 +73,21 @@ function getVideoElement(source, autoplay, background) {
   sourceEl.setAttribute('type', `video/${source.split('.').pop()}`);
   video.append(sourceEl);
 
+  // Add caption track if captions are provided
+  if (captions) {
+    const track = document.createElement('track');
+    track.setAttribute('kind', 'captions');
+    track.setAttribute('src', captions);
+    track.setAttribute('srclang', 'en');
+    track.setAttribute('label', 'English');
+    track.setAttribute('default', '');
+    video.append(track);
+  }
+
   return video;
 }
 
-const loadVideoEmbed = (block, link, autoplay, background) => {
+const loadVideoEmbed = (block, link, autoplay, background, captions) => {
   if (block.dataset.embedLoaded === 'true') {
     return;
   }
@@ -98,7 +109,7 @@ const loadVideoEmbed = (block, link, autoplay, background) => {
       block.dataset.embedLoaded = true;
     });
   } else {
-    const videoEl = getVideoElement(link, autoplay, background);
+    const videoEl = getVideoElement(link, autoplay, background, captions);
     block.append(videoEl);
     videoEl.addEventListener('canplay', () => {
       block.dataset.embedLoaded = true;
@@ -109,6 +120,18 @@ const loadVideoEmbed = (block, link, autoplay, background) => {
 export default async function decorate(block) {
   const placeholder = block.querySelector('picture');
   const link = block.querySelector('a').href;
+  
+  // Look for captions - could be a second link or data attribute
+  const links = block.querySelectorAll('a');
+  let captions = null;
+  if (links.length > 1) {
+    // If there's a second link, assume it's for captions
+    const captionLink = links[1].href;
+    if (captionLink && (captionLink.endsWith('.vtt') || captionLink.endsWith('.srt'))) {
+      captions = captionLink;
+    }
+  }
+  
   block.textContent = '';
   block.dataset.embedLoaded = false;
 
@@ -126,7 +149,7 @@ export default async function decorate(block) {
       );
       wrapper.addEventListener('click', () => {
         wrapper.remove();
-        loadVideoEmbed(block, link, true, false);
+        loadVideoEmbed(block, link, true, false, captions);
       });
     }
     block.append(wrapper);
@@ -137,7 +160,7 @@ export default async function decorate(block) {
       if (entries.some((e) => e.isIntersecting)) {
         observer.disconnect();
         const playOnLoad = autoplay && !prefersReducedMotion.matches;
-        loadVideoEmbed(block, link, playOnLoad, autoplay);
+        loadVideoEmbed(block, link, playOnLoad, autoplay, captions);
       }
     });
     observer.observe(block);
