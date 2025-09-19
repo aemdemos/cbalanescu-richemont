@@ -154,7 +154,12 @@ h3 {
 }
 
 h4 {
-  font-size: var(--heading-font-size-m);
+  font-family: "Sabon", "Sabon fallback to Times New Roman", "Sabon fallback to serif", serif;
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 400;
+  color: #515454;
+  font-synthesis: style; /* Allow browser to synthesize italic when not available */
 }
 
 h5 {

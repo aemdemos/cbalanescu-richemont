@@ -47,7 +47,7 @@
 }
 
 .hero.hero8 {
-  width: 100vw;
+  width: 100%;
   min-height: 80vh;
   height: 100vh;
   margin: 0;
@@ -57,55 +57,77 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url('./media_1c1f3dc9585b15bb29b8a25fe7852ecffa0e78082.jpg?width=2000&format=jpg&optimize=medium');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
-/* Hide the DOM image; use only background image */
+/* Position the image row as background */
 .hero.hero8 > div:first-child {
-  display: none;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
 }
 
-/* Flex centering for inner content wrapper. Remove fixed height. */
+/* Ensure image fills the container and center it */
+.hero.hero8 > div:first-child picture,
+.hero.hero8 > div:first-child img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* Centered content overlay - works for both text and images */
 .hero.hero8 > div:nth-child(2) {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: auto;
+  height: 100%;
   text-align: center;
   z-index: 1;
   margin: 0;
-  padding: 0;
-
-  /* Remove any vertical offset */
+  padding: 2rem;
+  position: relative;
 }
 
-/* Center the actual text headline and allow for responsive width */
-.hero.hero8 > div:nth-child(2) > div > p:first-child {
+/* Style content generically - works for text and images */
+.hero.hero8 > div:nth-child(2) * {
   color: #fff;
-  font-size: 2.5rem;
-  font-weight: 500;
-  margin: 0;
-  padding: 0 2rem;
-  line-height: 1.2;
-  text-align: center;
-  max-width: 950px;
-  letter-spacing: 0.01em;
-  align-self: center;
-
-  /* Remove any vertical offset */
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-/* Hide any extra DOM content */
-.hero.hero8 > div:nth-child(2) > div > p:not(:first-child),
-.hero.hero8 > div:nth-child(2) > div > ul,
-.hero.hero8 > div:nth-child(2) > div > img,
-.hero.hero8 > div:nth-child(2) > div > li {
-  display: none;
+/* Add spacing between elements except images */
+.hero.hero8 > div:nth-child(2) h1,
+.hero.hero8 > div:nth-child(2) h2,
+.hero.hero8 > div:nth-child(2) h3,
+.hero.hero8 > div:nth-child(2) p {
+  margin-bottom: 1rem;
+}
+
+/* Text styling */
+.hero.hero8 > div:nth-child(2) h1,
+.hero.hero8 > div:nth-child(2) h2,
+.hero.hero8 > div:nth-child(2) h3,
+.hero.hero8 > div:nth-child(2) p {
+  font-size: 3.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
+/* Image styling - absolute centering to match text positioning */
+.hero.hero8 > div:nth-child(2) img {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  max-width: 400px !important;
+  max-height: 400px !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 !important;
+  z-index: 10 !important;
 }
 
 /* Down-arrow icon at bottom center */
@@ -151,17 +173,27 @@
   margin: auto;
 }
 
-/* Responsive headline size and block height for mobile */
+/* Responsive styles for mobile */
 @media (width <= 600px) {
   .hero.hero8 {
     min-height: 50vh;
     height: 65vh;
   }
 
-  .hero.hero8 > div:nth-child(2) > div > p:first-child {
-    font-size: 1.3rem;
-    padding: 0 1rem;
-    max-width: 95vw;
+  .hero.hero8 > div:nth-child(2) {
+    padding: 1rem;
+  }
+
+  .hero.hero8 > div:nth-child(2) h1,
+  .hero.hero8 > div:nth-child(2) h2,
+  .hero.hero8 > div:nth-child(2) h3,
+  .hero.hero8 > div:nth-child(2) p {
+    font-size: 2.2rem;
+  }
+
+  .hero.hero8 > div:nth-child(2) img {
+    max-width: 250px;
+    max-height: 250px;
   }
 
   .hero.hero8 .button-container {
