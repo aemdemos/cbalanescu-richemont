@@ -295,8 +295,7 @@
 
 
 .columns.columns10 {
-  background: #f8f8f7;
-  padding: 48px 0 36px;
+  padding: 7rem 0 7rem;
 }
 
 .columns.columns10 > div {
@@ -304,15 +303,19 @@
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  gap: 56px;
+  gap: 4rem;
   max-width: 620px;
   margin: 0 auto;
 }
 
 @media (width <= 700px) {
+  .columns.columns10 {
+    padding: 2.5rem 0 3rem;
+  }
+
   .columns.columns10 > div {
     flex-direction: column;
-    gap: 36px;
+    gap: 2.5rem;
   }
 }
 
@@ -321,46 +324,43 @@
   flex-direction: column;
   align-items: center;
   position: relative;
-  width: 220px;
+  width: 13.75rem;
   min-width: 0;
-  min-height: 120px;
-  padding-top: 18px;
+  min-height: 7.5rem;
+  padding-top: 1.125rem;
 }
 
 .columns.columns10 > div > div::before {
   content: "";
   display: block;
-  width: 120px;
+  width: 20rem;
   height: 1px;
-  background: #d2d3d4;
+  background: #515454;
   position: absolute;
-  top: 0;
+  top: -1.5rem;
   left: 50%;
   transform: translateX(-50%);
-  border-radius: 0.5px;
+  border-radius: 0.03125rem;
 }
 
 .columns.columns10 > div > div > p {
   width: 100%;
   text-align: center;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
+  font-weight: 400;
 }
 
 .columns.columns10 > div > div > p:first-child {
-  font-size: 42px;
+  font-size: 4.3rem;
   color: #174158;
-  margin-top: 16px;
-  margin-bottom: 8px;
-  font-weight: 400;
+  margin: 1rem auto 2.5rem;
 }
 
 .columns.columns10 > div > div > p:last-child {
-  font-size: 15px;
-  color: #222;
-  margin-top: 0;
-  margin-bottom: 0;
-  font-weight: 400;
+  font-family: "ITC Avant Garde Gothic", "ITC AGG fallback to Arial", "ITC AGG fallback to sans-serif", sans-serif;
+  font-size: 1.25rem;
+  color: #515454;
+  line-height: 2.25rem;
   letter-spacing: 0.01em;
 }
 
@@ -501,9 +501,11 @@
 }
 
 
+/* ========================================
+   columns18 - Multi-column content layout
+   ======================================== */
 .columns.columns18 {
-  background-color: #f7f7f7;
-  padding: 86px 0 66px;
+  padding: 4rem 0;
 }
 
 .columns.columns18 > div {
@@ -511,54 +513,45 @@
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  max-width: 810px;
-  margin: 0 auto;
-  padding: 0 104px;
-  gap: 16px;
-}
-
-@media (width <= 1100px) {
-  .columns.columns18 > div {
-    max-width: 100%;
-    padding: 0 32px;
-    gap: 16px;
-  }
+  width: 100%;
+  margin: 0;
+  gap: 1rem;
 }
 
 @media (width <= 900px) {
+  .columns.columns18 {
+    padding: 3rem 0;
+  }
+
   .columns.columns18 > div {
     flex-direction: column;
-    max-width: 100%;
-    padding: 0 16px;
-    gap: 40px;
+    gap: 2.5rem;
   }
 }
 
 .columns.columns18 > div > div {
   flex: 1 1 0;
   min-width: 0;
-  padding: 0;
-  text-align: left;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  text-align: left;
 }
 
 .columns.columns18 h1 {
   color: #444;
-  font-size: 24px;
+  font-size: 2rem;
   font-weight: 400;
-  margin-top: 0;
-  margin-bottom: 18px;
-  line-height: 1.2;
+  margin: 0 0 1.125rem;
+  line-height: 1.35;
   text-align: left;
 }
 
 .columns.columns18 p {
   color: #555;
-  font-size: 16px;
+  font-size: 1.25rem;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.65;
   margin: 0;
   text-align: left;
 }

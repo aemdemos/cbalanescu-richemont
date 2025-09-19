@@ -163,7 +163,14 @@ h4 {
 }
 
 h5 {
-  font-size: var(--heading-font-size-s);
+  margin: 0;
+  font-family: "ITC Avant Garde Gothic", "ITC AGG fallback to Arial", "ITC AGG fallback to sans-serif", sans-serif;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.25rem;
+  color: #515454;
+  text-align: center;
 }
 
 h6 {
@@ -321,4 +328,23 @@ main .section.light, main .section.highlight {
 
 .centered {
   text-align: center;
+}
+
+/* Text with decorative line above */
+.text-with-line {
+  position: relative;
+  padding-top: 1.125rem;
+}
+
+.text-with-line::before {
+  content: "";
+  display: block;
+  width: 8rem;
+  height: 0.4rem;
+  background: #515454;
+  position: absolute;
+  top: 2.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 0.03125rem;
 }
