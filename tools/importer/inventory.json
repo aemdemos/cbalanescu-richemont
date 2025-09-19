@@ -252,28 +252,12 @@
           "uuid": "e7f95c83-03-dfc3dbc5c8ac0092d6d77773f1a6eb0944231797",
           "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[2]",
           "section": "section-1"
-        }
-      ]
-    },
-    {
-      "name": "Columns",
-      "cluster": 3,
-      "source": "Columns",
-      "target": "Columns (columns3)",
-      "key": "columns3",
-      "instances": [
+        },
         {
           "url": "https://www.richemont.com/our-maisons/van-cleef-arpels/",
           "urlHash": "1c0e4436f85e0705dd90535e0d04f9cc9a4cbd55",
           "uuid": "1c0e4436-10-647e94dd150037b2bb4e6854656cf6e36f0fd5ab",
           "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[9]"
-        },
-        {
-          "url": "https://www.richemont.com/our-maisons/van-cleef-arpels/",
-          "urlHash": "1c0e4436f85e0705dd90535e0d04f9cc9a4cbd55",
-          "uuid": "1c0e4436-11-778146753469d17283a77f694c01a6801a595db0",
-          "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[10]",
-          "section": "section-1"
         }
       ]
     },
@@ -367,6 +351,19 @@
           "urlHash": "e7f95c8319befe6b435db6c296990a9f7e1fec3a",
           "uuid": "e7f95c83-04-b44bfb6f91053e616228982ab0752280ea739906",
           "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[3]"
+        },
+        {
+          "url": "https://www.richemont.com/news-media/",
+          "urlHash": "c0f29da7a35e3bf5bbb232dd42d4e51ebc9ecce5",
+          "uuid": "c0f29da7-07-b44bfb6f91053e616228982ab0752280ea739906",
+          "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[3]"
+        },
+        {
+          "url": "https://www.richemont.com/our-maisons/van-cleef-arpels/",
+          "urlHash": "1c0e4436f85e0705dd90535e0d04f9cc9a4cbd55",
+          "uuid": "1c0e4436-11-778146753469d17283a77f694c01a6801a595db0",
+          "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[10]",
+          "section": "section-1"
         }
       ]
     },
@@ -438,6 +435,12 @@
           "url": "https://www.richemont.com/sustainability/",
           "urlHash": "a93c09f07574cb7b34b390333c5e0b6f8042cb2b",
           "uuid": "a93c09f0-02-b2198061dec525bcf2a9a6fb74e6f640c6dcd5ae",
+          "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[1]"
+        },
+        {
+          "url": "https://www.richemont.com/our-maisons/van-cleef-arpels/",
+          "urlHash": "1c0e4436f85e0705dd90535e0d04f9cc9a4cbd55",
+          "uuid": "1c0e4436-02-b2198061dec525bcf2a9a6fb74e6f640c6dcd5ae",
           "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[1]"
         }
       ]
@@ -696,21 +699,6 @@
     },
     {
       "name": "Columns",
-      "cluster": 24,
-      "source": "Columns",
-      "target": "Columns (columns24)",
-      "key": "columns24",
-      "instances": [
-        {
-          "url": "https://www.richemont.com/news-media/",
-          "urlHash": "c0f29da7a35e3bf5bbb232dd42d4e51ebc9ecce5",
-          "uuid": "c0f29da7-07-b44bfb6f91053e616228982ab0752280ea739906",
-          "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[3]"
-        }
-      ]
-    },
-    {
-      "name": "Columns",
       "cluster": 25,
       "source": "Columns",
       "target": "Columns (columns25)",
@@ -781,12 +769,6 @@
       "urlHash": "1c0e4436f85e0705dd90535e0d04f9cc9a4cbd55",
       "uuid": "1c0e4436-01-0ea0ae5ba1245dfb496167ef99f1633fc53b06ae",
       "xpath": "/html[1]/body[1]/nav[1]"
-    },
-    {
-      "url": "https://www.richemont.com/our-maisons/van-cleef-arpels/",
-      "urlHash": "1c0e4436f85e0705dd90535e0d04f9cc9a4cbd55",
-      "uuid": "1c0e4436-02-b2198061dec525bcf2a9a6fb74e6f640c6dcd5ae",
-      "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[1]"
     },
     {
       "url": "https://www.richemont.com/our-maisons/van-cleef-arpels/",
