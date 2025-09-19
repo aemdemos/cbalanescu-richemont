@@ -262,22 +262,6 @@
       ]
     },
     {
-      "name": "Columns",
-      "cluster": 3,
-      "source": "Columns",
-      "target": "Columns (columns3)",
-      "key": "columns3",
-      "instances": [
-        {
-          "url": "https://www.richemont.com/our-maisons/van-cleef-arpels/",
-          "urlHash": "1c0e4436f85e0705dd90535e0d04f9cc9a4cbd55",
-          "uuid": "1c0e4436-11-778146753469d17283a77f694c01a6801a595db0",
-          "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[10]",
-          "section": "section-1"
-        }
-      ]
-    },
-    {
       "name": "Cards",
       "cluster": 4,
       "source": "Cards",
@@ -373,6 +357,13 @@
           "urlHash": "c0f29da7a35e3bf5bbb232dd42d4e51ebc9ecce5",
           "uuid": "c0f29da7-07-b44bfb6f91053e616228982ab0752280ea739906",
           "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[3]"
+        },
+        {
+          "url": "https://www.richemont.com/our-maisons/van-cleef-arpels/",
+          "urlHash": "1c0e4436f85e0705dd90535e0d04f9cc9a4cbd55",
+          "uuid": "1c0e4436-11-778146753469d17283a77f694c01a6801a595db0",
+          "xpath": "/html[1]/body[1]/main[1]/div[1]/div[1]/div[10]",
+          "section": "section-1"
         }
       ]
     },
