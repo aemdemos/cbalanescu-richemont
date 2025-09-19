@@ -15,8 +15,8 @@
   --light-color: #f8f8f8;
   --dark-color: #505050;
   --text-color: #131313;
-  --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
+  --link-color: #004165;
+  --link-hover-color: #004165;
   --body-font-family: "Sabon", "Sabon Fallback", "Sabon fallback to Times New Roman", "Sabon fallback to serif", "serif";
   --heading-font-family: "Sabon", "Sabon Fallback", "Sabon fallback to Times New Roman", "Sabon fallback to serif", "serif";
   --body-font-size-m: 20px;
@@ -219,8 +219,8 @@ a:any-link {
 }
 
 a:hover {
-  color: var(--link-hover-color);
-  text-decoration: underline;
+  color: var(--link-color);
+  text-decoration: none;
 }
 
 /* buttons */
