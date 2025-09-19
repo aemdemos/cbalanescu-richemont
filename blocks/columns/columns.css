@@ -468,6 +468,20 @@
 @media (width <= 900px) {
   .columns.columns16 > div {
     flex-direction: column;
+    gap: 1rem;
+  }
+
+  .columns.columns16 > div > .columns-img-col {
+    flex: none;
+    min-height: 250px;
+    height: auto;
+  }
+
+  .columns.columns16 .columns-img-col picture,
+  .columns.columns16 .columns-img-col img {
+    height: auto;
+    min-height: 250px;
+    object-fit: cover;
   }
 }
 
