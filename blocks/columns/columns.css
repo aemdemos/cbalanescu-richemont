@@ -390,41 +390,56 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 32px 0 24px;
+  padding: 3rem 0;
   box-sizing: border-box;
   text-align: center;
   color: #17394d;
   min-width: 0;
+  position: relative;
 }
 
-.columns.columns15 > div:nth-child(2) > div {
-  border-top: 1px solid #e0e0e0;
+
+.columns.columns15 > div > div::before {
+  content: "";
+  display: block;
+  width: 30rem;
+  height: 1px;
+  background: #515454;
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 1px;
 }
 
 .columns.columns15 > div > div > p {
   margin: 0;
 }
 
-.columns.columns15 > div > div > p:first-child {
-  font-size: 2.2rem;
-  color: #17394d;
-  margin-bottom: 8px;
+.columns.columns15 > div > div > h3,
+.columns.columns15 > div > div > h5 {
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.columns.columns15 > div > div > h3:first-child,
+.columns.columns15 > div > div > h5:first-child {
+  font-size: 4rem !important;
+  margin: 16px 0 8px;
   font-weight: 400;
   line-height: 1.1;
   letter-spacing: 0;
 }
 
-.columns.columns15 > div > div > p:last-child {
-  font-size: 1rem;
-  color: #17394d;
+.columns.columns15 > div > div > h3:last-child,
+.columns.columns15 > div > div > h5:last-child {
+  font-size: 1.25rem !important;
   font-weight: 400;
   line-height: 1.3;
-  margin-top: 0;
+  margin: 0;
 }
 
-.columns.columns15 > div > div:not(:last-child) {
-  margin-right: 24px;
-}
 
 @media (width <= 800px) {
   .columns.columns15 > div {
@@ -434,16 +449,6 @@
 
   .columns.columns15 > div > div {
     padding: 24px 0;
-    border-top: none;
-    border-bottom: 1px solid #e0e0e0;
-  }
-
-  .columns.columns15 > div:nth-child(2) > div {
-    border-top: none;
-  }
-
-  .columns.columns15 > div > div:last-child {
-    border-bottom: none;
   }
 }
 
